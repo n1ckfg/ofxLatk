@@ -41,7 +41,7 @@ bool LatkZip::compress(string folderPath, string zipPath, bool recursive, bool e
     
     ofLogNotice() << "Compressing " << folderPath << " to " << zipPath;
     
-    std::ofstream outfile(zipPath.c_str(), ios::binary);
+    std::ofstream outfile(zipPath.c_str(), std::ios::binary);
     if (!outfile.good()) {
         ofLogError("LatkZip") << "Couldn't open " << zipPath;
         return false;
@@ -83,7 +83,7 @@ vector<string> LatkZip::list() {
     }
     
     infile.clear() ;
-    infile.seekg(0, ios::beg);
+    infile.seekg(0, std::ios::beg);
     Poco::Zip::ZipArchive arch(infile);
     Poco::Zip::ZipArchive::FileInfos::const_iterator it;
     for (it = arch.fileInfoBegin(); it != arch.fileInfoEnd(); it++) {
@@ -103,7 +103,7 @@ ofBuffer LatkZip::getFile(string fileName) {
         return ofBuffer();
     }
     infile.clear() ;
-    infile.seekg(0, ios::beg);
+    infile.seekg(0, std::ios::beg);
     
     // Find a file within the archive
     Poco::Zip::ZipArchive arch(infile);
@@ -130,7 +130,7 @@ bool LatkZip::unzipTo(string destination) {
         return false;
     }
     infile.clear() ;
-    infile.seekg(0, ios::beg);
+    infile.seekg(0, std::ios::beg);
     
     ofLogNotice("LatkZip") << "Unzipping archive to " << destination;
     

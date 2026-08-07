@@ -55,7 +55,7 @@ class LatkZip {
         static bool compress(string folderPath, string zipPath, bool recursive=true, bool excludeRoot=true, Poco::Zip::ZipCommon::CompressionLevel cl=Poco::Zip::ZipCommon::CL_NORMAL);
 
     protected:
-        ifstream infile;
+        std::ifstream infile;
         bool bOpened;
 
 };

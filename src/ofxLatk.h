@@ -6,3 +6,4 @@
 #include "ofxLatk/LatkFrame.h"
 #include "ofxLatk/LatkLayer.h"
 #include "ofxLatk/LatkStroke.h"
+#include "ofxLatk/LatkZip.h"
