@@ -29,7 +29,7 @@ SOFTWARE.
 #pragma once
 
 #include "ofMain.h"
-#include "ofxXmlPoco.h"
+
 
 #include <Poco/Zip/ZipArchive.h>
 #include <Poco/Zip/Compress.h>

@@ -26,10 +26,11 @@ common:
 	# or use += in several lines
 	# ADDON_DEPENDENCIES =
 	
-	# include search paths, this will be usually parsed from the file system
-	# but if the addon or addon libraries need special search paths they can be
-	# specified here separated by spaces or one per line using +=
-	# ADDON_INCLUDES =
+	ADDON_INCLUDES = src
+	ADDON_INCLUDES += libs/ofxLatk/include
+	ADDON_INCLUDES += libs/ofxLatk/include/ofxLatk
+	ADDON_INCLUDES += libs/jsoncpp/include
+	ADDON_INCLUDES += libs/poco/include
 	
 	# any special flag that should be passed to the compiler when using this
 	# addon
@@ -59,6 +60,9 @@ common:
 	# when parsing the file system looking for libraries exclude this for all or
 	# a specific platform
 	# ADDON_LIBS_EXCLUDE =
+	
+	ADDON_SOURCES_EXCLUDE = libs/poco/include/%
+	ADDON_SOURCES_EXCLUDE += libs/poco/lib/%
 	
 linux64:
 	# binary libraries, these will be usually parsed from the file system but some 

@@ -1,3 +1,2 @@
 ofxLatk
-ofxPoco
 ofxPostProcessing

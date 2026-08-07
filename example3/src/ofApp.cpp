@@ -2,7 +2,7 @@
 
 //--------------------------------------------------------------
 void ofApp::setup() {
-	latk = Latk("layer_test.json");   
+	latk = Latk("layer_test.latk");   
    
 	post.init(ofGetWidth(), ofGetHeight());
 	post.createPass<FxaaPass>()->setEnabled(true);
@@ -32,7 +32,7 @@ void ofApp::keyPressed(int key) {
 	}
 
 	if (key == 'o') {
-		latk.write("test.json");
+		latk.write("test.latk");
 	}
 }
 
