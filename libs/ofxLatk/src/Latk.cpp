@@ -195,9 +195,28 @@ void Latk::write(string fileName) {
 	s.push_back("    ]");
 	s.push_back("}");
 
-	string url = fileName;
+	string jsonString = ofJoinString(s, "\n");
 
-	ofFile file;
-	file.open(url, ofFile::WriteOnly);
-	file << ofJoinString(s, "\n");
+	if (fileName.length() > 5 && fileName.substr(fileName.length() - 5) == ".latk") {
+		string tmpFolder = ofToDataPath("tmp_latk_" + ofToString(ofGetSystemTimeMillis()));
+		ofDirectory dir(tmpFolder);
+		dir.create();
+		
+		string baseName = ofFilePath::getBaseName(fileName);
+		string tmpFile = tmpFolder + "/" + baseName + ".json";
+		
+		ofFile file;
+		file.open(tmpFile, ofFile::WriteOnly);
+		file << jsonString;
+		file.close();
+		
+		LatkZip::compress(tmpFolder, fileName, true, true);
+		
+		dir.remove(true);
+	} else {
+		ofFile file;
+		file.open(fileName, ofFile::WriteOnly);
+		file << jsonString;
+		file.close();
+	}
 }
