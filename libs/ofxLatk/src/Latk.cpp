@@ -1,4 +1,5 @@
 #include "Latk.h"
+#include "LatkZip.h"
 
 Latk::Latk() { }
 
@@ -33,7 +34,22 @@ bool Latk::checkInterval() {
 void Latk::read(string fileName, bool clearExisting) {
 	if (clearExisting) layers.clear();
 
-	json.open(fileName);
+	if (fileName.length() > 5 && fileName.substr(fileName.length() - 5) == ".latk") {
+		LatkZip zip;
+		if (zip.open(fileName)) {
+			vector<string> files = zip.list();
+			if (files.size() > 0) {
+				ofBuffer buf = zip.getFile(files[0]);
+				json.parse(buf.getText());
+			} else {
+				ofLogError("Latk") << "Zip file is empty.";
+			}
+		} else {
+			ofLogError("Latk") << "Could not open zip file.";
+		}
+	} else {
+		json.open(fileName);
+	}
 
 	for (int h = 0; h<json["grease_pencil"].size(); h++) {
 		jsonGp = json["grease_pencil"][h];
