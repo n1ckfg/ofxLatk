@@ -10,7 +10,7 @@ The core of the addon is a nested set of classes that represent the structure of
 
 *   **`Latk`**: The root class representing a complete Latk animation file. 
     *   It manages the overall playback state (`checkInterval()`, `run()`), tracking time/frames, and controls a collection of `LatkLayer`s.
-    *   It contains the main `read(string fileName)` and `write(string fileName)` logic, which translates the in-memory hierarchy to and from the Latk JSON format.
+    *   It contains the main `read(string fileName)` and `write(string fileName)` logic. This logic automatically detects file extensions, seamlessly handling both plain `.json` files and compressed `.latk` zipped archives directly in-memory.
 *   **`LatkLayer`**: Represents a distinct layer within the animation.
     *   It contains a sequential vector of `LatkFrame`s and tracks the `currentFrame` being played.
 *   **`LatkFrame`**: Represents a single snapshot in time for a given layer. 
@@ -26,11 +26,12 @@ The core of the addon is a nested set of classes that represent the structure of
 *   **`libs/ofxLatk/`**: Contains the core logic and classes.
     *   `include/ofxLatk/` and `src/`: Contain the source code for the hierarchical data model (`Latk`, `LatkLayer`, `LatkFrame`, `LatkStroke`).
 *   **`libs/jsoncpp/`**: An embedded third-party library for parsing and writing JSON files.
+*   **`libs/poco/`**: Contains bundled Poco headers and precompiled static libraries. This allows `ofxLatk` to be completely self-contained for ZIP operations, eliminating the need to depend on the external `ofxPoco` addon and preventing symbol conflicts (such as with the system `zlib`).
 
 ## I/O and Utilities
 
 *   **`LatkJson`**: A wrapper class built on top of `JsonCpp` (and loosely based on `ofxJSON`). It provides easy utility methods to open, parse, and save JSON strings and files from local or remote URLs. `Latk.cpp` uses this to parse the `"grease_pencil"` nested JSON structure into the C++ hierarchy.
-*   **`LatkZip`**: A wrapper class utilizing `Poco::Zip` (loosely based on `ofxZipArchive`). It provides utility functions to compress folders or decompress zipped archives. While the `Latk::write` method outputs standard JSON, `LatkZip` is provided to handle `.latk` files which are sometimes zipped JSON archives.
+*   **`LatkZip`**: A wrapper class utilizing the bundled `Poco::Zip` library. It provides utility functions to compress folders or decompress zipped archives. `LatkZip` has been tightly integrated into `Latk` to process `.latk` archives completely in-memory (using string streams and memory buffers), avoiding disk I/O overhead from temporary files.
 
 ## Rendering Pipeline
 
