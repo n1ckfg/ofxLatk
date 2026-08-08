@@ -30,8 +30,9 @@ common:
 	ADDON_INCLUDES += libs/ofxLatk/include
 	ADDON_INCLUDES += libs/ofxLatk/include/ofxLatk
 	ADDON_INCLUDES += libs/jsoncpp/include
-	ADDON_INCLUDES += libs/poco/include
-	
+	ADDON_INCLUDES += libs/zip/include
+	ADDON_INCLUDES += libs/zip/src
+
 	# any special flag that should be passed to the compiler when using this
 	# addon
 	# ADDON_CFLAGS =
@@ -60,9 +61,6 @@ common:
 	# when parsing the file system looking for libraries exclude this for all or
 	# a specific platform
 	# ADDON_LIBS_EXCLUDE =
-	
-	ADDON_SOURCES_EXCLUDE = libs/poco/include/%
-	ADDON_SOURCES_EXCLUDE += libs/poco/lib/%
 	
 linux64:
 	# binary libraries, these will be usually parsed from the file system but some 

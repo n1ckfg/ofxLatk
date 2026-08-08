@@ -34,8 +34,8 @@
 		<ClCompile Include="..\..\..\addons\ofxLatk\libs\ofxLatk\src\LatkZip.cpp">
 			<Filter>addons\ofxLatk\libs\ofxLatk\src</Filter>
 		</ClCompile>
-		<ClCompile Include="..\..\..\addons\ofxPoco\src\ofxXmlPoco.cpp">
-			<Filter>addons\ofxPoco\src</Filter>
+		<ClCompile Include="..\..\..\addons\ofxLatk\libs\zip\src\zip.c">
+			<Filter>addons\ofxLatk\libs\zip\src</Filter>
 		</ClCompile>
 	</ItemGroup>
 	<ItemGroup>
@@ -78,11 +78,14 @@
 		<Filter Include="addons\ofxLatk\libs\ofxLatk\src">
 			<UniqueIdentifier>{511B0CB1-1D4F-AB5C-F510-C614}</UniqueIdentifier>
 		</Filter>
-		<Filter Include="addons\ofxPoco">
-			<UniqueIdentifier>{3256AE3E-9B29-EA27-C842-CE6B}</UniqueIdentifier>
+		<Filter Include="addons\ofxLatk\libs\zip">
+			<UniqueIdentifier>{322A248C-A2ED-4076-B578-5147}</UniqueIdentifier>
 		</Filter>
-		<Filter Include="addons\ofxPoco\src">
-			<UniqueIdentifier>{C7D4269D-D8A9-A7BB-531B-98DA}</UniqueIdentifier>
+		<Filter Include="addons\ofxLatk\libs\zip\include">
+			<UniqueIdentifier>{716A402A-7F4E-40D1-A345-B5D4}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxLatk\libs\zip\src">
+			<UniqueIdentifier>{839F795E-A142-4084-98EB-0C27}</UniqueIdentifier>
 		</Filter>
 	</ItemGroup>
 	<ItemGroup>
@@ -119,8 +122,11 @@
 		<ClInclude Include="..\..\..\addons\ofxLatk\libs\ofxLatk\include\ofxLatk\LatkZip.h">
 			<Filter>addons\ofxLatk\libs\ofxLatk\include\ofxLatk</Filter>
 		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxPoco\src\ofxXmlPoco.h">
-			<Filter>addons\ofxPoco\src</Filter>
+		<ClInclude Include="..\..\..\addons\ofxLatk\libs\zip\include\zip.h">
+			<Filter>addons\ofxLatk\libs\zip\include</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxLatk\libs\zip\src\miniz.h">
+			<Filter>addons\ofxLatk\libs\zip\src</Filter>
 		</ClInclude>
 	</ItemGroup>
 	<ItemGroup>

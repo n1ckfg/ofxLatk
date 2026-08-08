@@ -30,11 +30,32 @@
 			"path": "include",
 			"sourceTree": "<group>"
 		},
+		"0C0E2357-DB88-4BA4-8288-816BD20383DD": {
+			"fileRef": "1363C8FC-C2FA-4DDB-84F5-877004516E43",
+			"isa": "PBXBuildFile"
+		},
+		"0D9A4B8F-81E4-4CA9-A9BE-D1EDA9DF7742": {
+			"children": [
+				"CA39AFC5-C6EA-4CB1-BEC4-FB874B781608",
+				"3F414733-E506-425F-96F5-B4843FAEAFDD"
+			],
+			"isa": "PBXGroup",
+			"name": "zip",
+			"path": "zip",
+			"sourceTree": "<group>"
+		},
 		"0E2FEFE0-666A-4873-87EB-1D79BFCC2BC2": {
 			"fileEncoding": "4",
 			"isa": "PBXFileReference",
 			"lastKnownFileType": "sourcecode.cpp.cpp",
 			"name": "LatkJson.cpp",
+			"sourceTree": "<group>"
+		},
+		"1363C8FC-C2FA-4DDB-84F5-877004516E43": {
+			"fileEncoding": "4",
+			"isa": "PBXFileReference",
+			"lastKnownFileType": "sourcecode.c.c",
+			"name": "zip.c",
 			"sourceTree": "<group>"
 		},
 		"191CD6FA2847E21E0085CBB6": {
@@ -75,11 +96,19 @@
 		"276EF685-0A99-46B0-BE8D-44A0A1164519": {
 			"children": [
 				"00356924-CFAE-4FFC-BDF8-E431D92906A6",
-				"F16A0864-3109-4995-9EEA-09EEFA1A1DA7"
+				"F16A0864-3109-4995-9EEA-09EEFA1A1DA7",
+				"0D9A4B8F-81E4-4CA9-A9BE-D1EDA9DF7742"
 			],
 			"isa": "PBXGroup",
 			"name": "libs",
 			"path": "libs",
+			"sourceTree": "<group>"
+		},
+		"2CC74D67-AD3C-4CB2-9190-9243A36EEA5C": {
+			"fileEncoding": "4",
+			"isa": "PBXFileReference",
+			"lastKnownFileType": "sourcecode.c.h",
+			"name": "zip.h",
 			"sourceTree": "<group>"
 		},
 		"382245A5-2547-4C53-BF08-D79866839B55": {
@@ -102,6 +131,16 @@
 			"isa": "PBXGroup",
 			"name": "include",
 			"path": "include",
+			"sourceTree": "<group>"
+		},
+		"3F414733-E506-425F-96F5-B4843FAEAFDD": {
+			"children": [
+				"9C573037-5C53-4A7F-B919-040DACE0AEFB",
+				"1363C8FC-C2FA-4DDB-84F5-877004516E43"
+			],
+			"isa": "PBXGroup",
+			"name": "src",
+			"path": "src",
 			"sourceTree": "<group>"
 		},
 		"4AB253B5-5AAA-4574-9E36-4CDD67A5292D": {
@@ -192,6 +231,13 @@
 			"name": "LatkJson.h",
 			"sourceTree": "<group>"
 		},
+		"9C573037-5C53-4A7F-B919-040DACE0AEFB": {
+			"fileEncoding": "4",
+			"isa": "PBXFileReference",
+			"lastKnownFileType": "sourcecode.c.h",
+			"name": "miniz.h",
+			"sourceTree": "<group>"
+		},
 		"9D9D8C17-3926-45A1-9EC9-94CA46537296": {
 			"fileEncoding": "4",
 			"isa": "PBXFileReference",
@@ -241,6 +287,15 @@
 			"isa": "PBXGroup",
 			"name": "ofxLatk",
 			"path": "ofxLatk",
+			"sourceTree": "<group>"
+		},
+		"CA39AFC5-C6EA-4CB1-BEC4-FB874B781608": {
+			"children": [
+				"2CC74D67-AD3C-4CB2-9190-9243A36EEA5C"
+			],
+			"isa": "PBXGroup",
+			"name": "include",
+			"path": "include",
 			"sourceTree": "<group>"
 		},
 		"CBEC342C-0665-472B-A36D-21F4B2929F8C": {
@@ -378,7 +433,8 @@
 				"382245A5-2547-4C53-BF08-D79866839B55",
 				"85201376-8713-46C8-B47F-53BD9BC7BE1B",
 				"840BE836-F72D-4599-A8A2-D3F9F365D157",
-				"979B42D3-C05D-4CED-B0A8-A42341832BA3"
+				"979B42D3-C05D-4CED-B0A8-A42341832BA3",
+				"0C0E2357-DB88-4BA4-8288-816BD20383DD"
 			],
 			"isa": "PBXSourcesBuildPhase",
 			"runOnlyForDeploymentPostprocessing": "0"
@@ -438,14 +494,14 @@
 					"../libs/ofxLatk/include",
 					"../libs/ofxLatk/include/ofxLatk",
 					"../libs/jsoncpp/include",
-					"../libs/poco/include"
+					"../libs/zip/include",
+					"../libs/zip/src"
 				],
 				"LIBRARY_SEARCH_PATHS": "$(inherited)",
 				"OTHER_LDFLAGS": [
 					"$(OF_CORE_LIBS)",
 					"$(OF_CORE_FRAMEWORKS)",
-					"$(LIB_OF_DEBUG)",
-					"../libs/poco/lib/macos/poco.xcframework/macos-arm64_x86_64/poco.a"
+					"$(LIB_OF_DEBUG)"
 				]
 			},
 			"isa": "XCBuildConfiguration",
@@ -465,14 +521,14 @@
 					"../libs/ofxLatk/include",
 					"../libs/ofxLatk/include/ofxLatk",
 					"../libs/jsoncpp/include",
-					"../libs/poco/include"
+					"../libs/zip/include",
+					"../libs/zip/src"
 				],
 				"LIBRARY_SEARCH_PATHS": "$(inherited)",
 				"OTHER_LDFLAGS": [
 					"$(OF_CORE_LIBS)",
 					"$(OF_CORE_FRAMEWORKS)",
-					"$(LIB_OF_RELEASE)",
-					"../libs/poco/lib/macos/poco.xcframework/macos-arm64_x86_64/poco.a"
+					"$(LIB_OF_RELEASE)"
 				],
 				"baseConfigurationReference": "E4EB6923138AFD0F00A09F29"
 			},

@@ -26,12 +26,12 @@ The core of the addon is a nested set of classes that represent the structure of
 *   **`libs/ofxLatk/`**: Contains the core logic and classes.
     *   `include/ofxLatk/` and `src/`: Contain the source code for the hierarchical data model (`Latk`, `LatkLayer`, `LatkFrame`, `LatkStroke`).
 *   **`libs/jsoncpp/`**: An embedded third-party library for parsing and writing JSON files.
-*   **`libs/poco/`**: Contains bundled Poco headers and precompiled static libraries. This allows `ofxLatk` to be completely self-contained for ZIP operations, eliminating the need to depend on the external `ofxPoco` addon and preventing symbol conflicts (such as with the system `zlib`).
+*   **`libs/zip/`**: An embedded copy of [kuba--/zip](https://github.com/kuba--/zip) (a small ZIP library in plain C, built on [miniz](https://github.com/richgel999/miniz)) used for all ZIP operations. It is three source files with no external dependencies, so it compiles from source on every platform openFrameworks targets, including Linux/ARM. It replaced a bundled Poco build that shipped as a 49 MB macOS-only `.xcframework` and made the addon impossible to build on a Raspberry Pi. See `libs/zip/README.md` for the vendored version and the two local patches.
 
 ## I/O and Utilities
 
 *   **`LatkJson`**: A wrapper class built on top of `JsonCpp` (and loosely based on `ofxJSON`). It provides easy utility methods to open, parse, and save JSON strings and files from local or remote URLs. `Latk.cpp` uses this to parse the `"grease_pencil"` nested JSON structure into the C++ hierarchy.
-*   **`LatkZip`**: A wrapper class utilizing the bundled `Poco::Zip` library. It provides utility functions to compress folders or decompress zipped archives. `LatkZip` has been tightly integrated into `Latk` to process `.latk` archives completely in-memory (using string streams and memory buffers), avoiding disk I/O overhead from temporary files.
+*   **`LatkZip`**: A wrapper class utilizing the bundled `zip` library. It provides utility functions to compress folders (`compress()`) or single buffers (`compressBuffer()`), and to decompress zipped archives (`unzipTo()`). `LatkZip` has been tightly integrated into `Latk` to process `.latk` archives completely in-memory: `open()` reads the whole archive into an `ofBuffer` and hands it to the library's stream API, and `getFile()` returns an entry as an `ofBuffer`, so no temporary files are ever written.
 
 ## Rendering Pipeline
 

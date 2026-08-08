@@ -25,72 +25,40 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+Backed by kuba--/zip (see libs/zip), which replaced the bundled Poco build.
 */
 #pragma once
 
 #include "ofMain.h"
 
-
-#include <Poco/Zip/ZipArchive.h>
-#include <Poco/Zip/Compress.h>
-#include <Poco/Zip/Decompress.h>
-#include <Poco/Zip/ZipStream.h>
-#include <Poco/Path.h>
-#include <Poco/Delegate.h>
-#include <Poco/File.h>
-#include <Poco/FileStream.h>
-#include <Poco/StreamCopier.h>
+#include "zip.h"
 
 // ----------------------------------------------------------
 class LatkZip {
 
     public:
-        LatkZip():bOpened(false) { }
-        
+        LatkZip() { }
+        ~LatkZip();
+
+        // archives are read into memory, so a LatkZip owns its buffer and can't be copied
+        LatkZip(const LatkZip&) = delete;
+        LatkZip& operator=(const LatkZip&) = delete;
+
         bool open(string zipPath);
+        bool openBuffer(const ofBuffer& zipData);
+        void close();
+
         vector<string> list();
         ofBuffer getFile(string fileName);
         bool unzipTo(string destination);
-        
-        static bool compress(string folderPath, string zipPath, bool recursive=true, bool excludeRoot=true, Poco::Zip::ZipCommon::CompressionLevel cl=Poco::Zip::ZipCommon::CL_NORMAL);
+
+        static bool compress(string folderPath, string zipPath, bool recursive=true, bool excludeRoot=true, int level=ZIP_DEFAULT_COMPRESSION_LEVEL);
+        static bool compressBuffer(const ofBuffer& data, string entryName, string zipPath, int level=ZIP_DEFAULT_COMPRESSION_LEVEL);
 
     protected:
-        std::ifstream infile;
-        bool bOpened;
+        struct zip_t* archive = nullptr;
+        ofBuffer buffer; // backs the archive while it's open
+        bool bOpened = false;
 
 };
-
-// ----------------------------------------------------------
-typedef std::pair<const Poco::Zip::ZipLocalFileHeader, const std::string> ZipErrorInfo;
-typedef std::pair<const Poco::Zip::ZipLocalFileHeader, const Poco::Path> ZipOkInfo;
-typedef const Poco::Zip::ZipLocalFileHeader ZipDoneInfo;
-
-// ----------------------------------------------------------
-class LatkZipArchiveHandler {
-
-    public:
-        LatkZipArchiveHandler() {
-            isSuccessful = false;
-        }
-
-        ~LatkZipArchiveHandler() { }
-        
-        void onError(const void*, ZipErrorInfo& info) {
-            ofLogError("LatkZip") << "Failed to Unzip: " + info.second;
-            isSuccessful = false;
-        }
-        
-        void onOk(const void*, ZipOkInfo& info) {
-            ofLogNotice("LatkZip") << "Unzipped: " << info.second.toString();
-            isSuccessful = true;
-        }
-        
-        void onDone(const void*, ZipDoneInfo& header) {
-            ofLogNotice("LatkZip") << "Zipped " << header.getFileName() << " was " << header.getUncompressedSize() << " now " << header.getCompressedSize();
-            isSuccessful = true;
-        }
-        
-        bool isSuccessful;
-
-};
-

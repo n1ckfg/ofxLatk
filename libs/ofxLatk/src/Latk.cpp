@@ -1,6 +1,5 @@
 #include "Latk.h"
 #include "LatkZip.h"
-#include <Poco/DateTime.h>
 #include <sstream>
 
 Latk::Latk() { }
@@ -200,16 +199,9 @@ void Latk::write(string fileName) {
 	string jsonString = ofJoinString(s, "\n");
 
 	if (fileName.length() > 5 && fileName.substr(fileName.length() - 5) == ".latk") {
-		std::ofstream outfile(ofToDataPath(fileName).c_str(), std::ios::binary);
-		if (outfile.good()) {
-			Poco::Zip::Compress c(outfile, true);
-			std::stringstream ss(jsonString);
-			string baseName = ofFilePath::getBaseName(fileName) + ".json";
-			c.addFile(ss, Poco::DateTime(), Poco::Path(baseName));
-			c.close();
-			outfile.close();
-		} else {
-			ofLogError("Latk") << "Could not open " << fileName << " for writing.";
+		string baseName = ofFilePath::getBaseName(fileName) + ".json";
+		if (!LatkZip::compressBuffer(ofBuffer(jsonString.c_str(), jsonString.size()), baseName, fileName)) {
+			ofLogError("Latk") << "Could not write " << fileName << ".";
 		}
 	} else {
 		ofFile file;

@@ -170,6 +170,20 @@
 			"fileRef": "4F8BCF1F-EC6E-42DE-80B9-786024B24C7D",
 			"isa": "PBXBuildFile"
 		},
+		"22E54BA8-61DD-4DF4-B186-15E680FE97D8": {
+			"children": [
+				"CA9E4E77-55FA-48C7-9E85-B6804D86E339",
+				"4F3EF69E-0A8E-434D-8DD8-D00724018F6F"
+			],
+			"isa": "PBXGroup",
+			"name": "src",
+			"path": "src",
+			"sourceTree": "<group>"
+		},
+		"22EC79D7-4E83-437C-8B23-67FA7BE5754D": {
+			"fileRef": "4F3EF69E-0A8E-434D-8DD8-D00724018F6F",
+			"isa": "PBXBuildFile"
+		},
 		"2386BDD8-B32C-4C01-86C5-BA3F313E890E": {
 			"fileEncoding": "4",
 			"isa": "PBXFileReference",
@@ -309,6 +323,13 @@
 			"name": "EdgePass.cpp",
 			"sourceTree": "<group>"
 		},
+		"4F3EF69E-0A8E-434D-8DD8-D00724018F6F": {
+			"fileEncoding": "4",
+			"isa": "PBXFileReference",
+			"lastKnownFileType": "sourcecode.c.c",
+			"name": "zip.c",
+			"sourceTree": "<group>"
+		},
 		"4F8BCF1F-EC6E-42DE-80B9-786024B24C7D": {
 			"fileEncoding": "4",
 			"isa": "PBXFileReference",
@@ -368,6 +389,16 @@
 		"6BACACFF-1369-4BFB-B312-79FEE373937A": {
 			"fileRef": "C8404B3F-AB2D-41DB-BE93-CE4D9917FE75",
 			"isa": "PBXBuildFile"
+		},
+		"6BBC7D21-B8FF-4D8C-B645-A73B3DFCB1B3": {
+			"children": [
+				"A8012674-1297-4080-B675-868E8B2D0A4E",
+				"22E54BA8-61DD-4DF4-B186-15E680FE97D8"
+			],
+			"isa": "PBXGroup",
+			"name": "zip",
+			"path": "zip",
+			"sourceTree": "<group>"
 		},
 		"6D0332D4-D0BF-4652-BA8A-85240F9E47D2": {
 			"fileEncoding": "4",
@@ -554,6 +585,13 @@
 			"name": "LatkStroke.cpp",
 			"sourceTree": "<group>"
 		},
+		"A2CEBE2E-EBEF-427B-A8E7-DCBDF0DF17F2": {
+			"fileEncoding": "4",
+			"isa": "PBXFileReference",
+			"lastKnownFileType": "sourcecode.c.h",
+			"name": "zip.h",
+			"sourceTree": "<group>"
+		},
 		"A52FF0FC-1439-4C77-85D2-BD580B8E31E0": {
 			"fileRef": "4611A1DE-4148-4DC3-BAA0-746C1D87747B",
 			"isa": "PBXBuildFile"
@@ -570,6 +608,15 @@
 			"isa": "PBXFileReference",
 			"lastKnownFileType": "sourcecode.cpp.cpp",
 			"name": "KaleidoscopePass.cpp",
+			"sourceTree": "<group>"
+		},
+		"A8012674-1297-4080-B675-868E8B2D0A4E": {
+			"children": [
+				"A2CEBE2E-EBEF-427B-A8E7-DCBDF0DF17F2"
+			],
+			"isa": "PBXGroup",
+			"name": "include",
+			"path": "include",
 			"sourceTree": "<group>"
 		},
 		"AABE91B2-2BA8-4917-9E8E-C3284D2F12AA": {
@@ -693,6 +740,13 @@
 		"CA691C7A-3FF3-4CB7-9D33-9A0F48B7316F": {
 			"fileRef": "A2603843-73B9-4F8E-9E3F-FA96267A6C87",
 			"isa": "PBXBuildFile"
+		},
+		"CA9E4E77-55FA-48C7-9E85-B6804D86E339": {
+			"fileEncoding": "4",
+			"isa": "PBXFileReference",
+			"lastKnownFileType": "sourcecode.c.h",
+			"name": "miniz.h",
+			"sourceTree": "<group>"
 		},
 		"CD364BAA-7DF5-4FFF-B228-6447ABB98EA0": {
 			"fileEncoding": "4",
@@ -903,7 +957,8 @@
 				"D3338B5F-07A0-4325-9A34-54EEADB0D5E0",
 				"C8326B8C-0E8A-45CD-88D1-9E853518F7F1",
 				"2A29F6B2-D479-4B54-84DC-9C54D217D301",
-				"20243DFC-31B1-485A-9023-7FC4D7A92F17"
+				"20243DFC-31B1-485A-9023-7FC4D7A92F17",
+				"22EC79D7-4E83-437C-8B23-67FA7BE5754D"
 			],
 			"isa": "PBXSourcesBuildPhase",
 			"runOnlyForDeploymentPostprocessing": "0"
@@ -963,15 +1018,15 @@
 					"../libs/ofxLatk/include",
 					"../libs/ofxLatk/include/ofxLatk",
 					"../libs/jsoncpp/include",
-					"../libs/poco/include",
+					"../libs/zip/include",
+					"../libs/zip/src",
 					"../../ofxPostProcessing/src"
 				],
 				"LIBRARY_SEARCH_PATHS": "$(inherited)",
 				"OTHER_LDFLAGS": [
 					"$(OF_CORE_LIBS)",
 					"$(OF_CORE_FRAMEWORKS)",
-					"$(LIB_OF_DEBUG)",
-					"../libs/poco/lib/macos/poco.xcframework/macos-arm64_x86_64/poco.a"
+					"$(LIB_OF_DEBUG)"
 				]
 			},
 			"isa": "XCBuildConfiguration",
@@ -991,15 +1046,15 @@
 					"../libs/ofxLatk/include",
 					"../libs/ofxLatk/include/ofxLatk",
 					"../libs/jsoncpp/include",
-					"../libs/poco/include",
+					"../libs/zip/include",
+					"../libs/zip/src",
 					"../../ofxPostProcessing/src"
 				],
 				"LIBRARY_SEARCH_PATHS": "$(inherited)",
 				"OTHER_LDFLAGS": [
 					"$(OF_CORE_LIBS)",
 					"$(OF_CORE_FRAMEWORKS)",
-					"$(LIB_OF_RELEASE)",
-					"../libs/poco/lib/macos/poco.xcframework/macos-arm64_x86_64/poco.a"
+					"$(LIB_OF_RELEASE)"
 				],
 				"baseConfigurationReference": "E4EB6923138AFD0F00A09F29"
 			},
@@ -1088,7 +1143,8 @@
 		"ED6EB6A1-A4C7-4CD6-BD0A-2D7738972AEE": {
 			"children": [
 				"461911D2-39C2-4E16-A2A2-100B1767A42D",
-				"8FD78FDC-D650-4C9E-A123-9FAA5FF7B0CA"
+				"8FD78FDC-D650-4C9E-A123-9FAA5FF7B0CA",
+				"6BBC7D21-B8FF-4D8C-B645-A73B3DFCB1B3"
 			],
 			"isa": "PBXGroup",
 			"name": "libs",

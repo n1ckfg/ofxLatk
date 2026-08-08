@@ -100,17 +100,16 @@
 			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
 			<RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
 			<WarningLevel>Level3</WarningLevel>
-			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\addons\ofxLatk\libs;..\..\..\addons\ofxLatk\libs\jsoncpp;..\..\..\addons\ofxLatk\libs\jsoncpp\include;..\..\..\addons\ofxLatk\libs\jsoncpp\include\json;..\..\..\addons\ofxLatk\libs\jsoncpp\src;..\..\..\addons\ofxLatk\libs\ofxLatk;..\..\..\addons\ofxLatk\libs\ofxLatk\include;..\..\..\addons\ofxLatk\libs\ofxLatk\include\ofxLatk;..\..\..\addons\ofxLatk\libs\ofxLatk\src;..\..\..\addons\ofxLatk\src;..\..\..\addons\ofxPoco\libs\poco\include;..\..\..\addons\ofxPoco\src</AdditionalIncludeDirectories>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\addons\ofxLatk\libs;..\..\..\addons\ofxLatk\libs\jsoncpp;..\..\..\addons\ofxLatk\libs\jsoncpp\include;..\..\..\addons\ofxLatk\libs\jsoncpp\include\json;..\..\..\addons\ofxLatk\libs\jsoncpp\src;..\..\..\addons\ofxLatk\libs\ofxLatk;..\..\..\addons\ofxLatk\libs\ofxLatk\include;..\..\..\addons\ofxLatk\libs\ofxLatk\include\ofxLatk;..\..\..\addons\ofxLatk\libs\ofxLatk\src;..\..\..\addons\ofxLatk\src;..\..\..\addons\ofxLatk\libs\zip;..\..\..\addons\ofxLatk\libs\zip\include;..\..\..\addons\ofxLatk\libs\zip\src</AdditionalIncludeDirectories>
 			<CompileAs>CompileAsCpp</CompileAs>
 			<ObjectFileName>$(IntDir)</ObjectFileName>
-			<AdditionalOptions>-DPOCO_STATIC</AdditionalOptions>
 		</ClCompile>
 		<Link>
 			<GenerateDebugInformation>true</GenerateDebugInformation>
 			<SubSystem>Console</SubSystem>
 			<RandomizedBaseAddress>false</RandomizedBaseAddress>
-			<AdditionalDependencies>%(AdditionalDependencies);PocoCryptomdd.lib;PocoDatamdd.lib;PocoDataSQLitemdd.lib;PocoFoundationmdd.lib;PocoJSONmdd.lib;PocoNetmdd.lib;PocoNetSSLmdd.lib;PocoPDFmdd.lib;PocoUtilmdd.lib;PocoXMLmdd.lib;PocoZipmdd.lib;iphlpapi.lib</AdditionalDependencies>
-			<AdditionalLibraryDirectories>%(AdditionalLibraryDirectories);..\..\..\addons\ofxPoco\libs\poco\lib\vs\Win32\Debug;..\..\..\addons\ofxPoco</AdditionalLibraryDirectories>
+			<AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+			<AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
 		</Link>
 		<PostBuildEvent />
 	</ItemDefinitionGroup>
@@ -121,18 +120,17 @@
 			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
 			<RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
 			<WarningLevel>Level3</WarningLevel>
-			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\addons\ofxLatk\libs;..\..\..\addons\ofxLatk\libs\jsoncpp;..\..\..\addons\ofxLatk\libs\jsoncpp\include;..\..\..\addons\ofxLatk\libs\jsoncpp\include\json;..\..\..\addons\ofxLatk\libs\jsoncpp\src;..\..\..\addons\ofxLatk\libs\ofxLatk;..\..\..\addons\ofxLatk\libs\ofxLatk\include;..\..\..\addons\ofxLatk\libs\ofxLatk\include\ofxLatk;..\..\..\addons\ofxLatk\libs\ofxLatk\src;..\..\..\addons\ofxLatk\src;..\..\..\addons\ofxPoco\libs\poco\include;..\..\..\addons\ofxPoco\src</AdditionalIncludeDirectories>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\addons\ofxLatk\libs;..\..\..\addons\ofxLatk\libs\jsoncpp;..\..\..\addons\ofxLatk\libs\jsoncpp\include;..\..\..\addons\ofxLatk\libs\jsoncpp\include\json;..\..\..\addons\ofxLatk\libs\jsoncpp\src;..\..\..\addons\ofxLatk\libs\ofxLatk;..\..\..\addons\ofxLatk\libs\ofxLatk\include;..\..\..\addons\ofxLatk\libs\ofxLatk\include\ofxLatk;..\..\..\addons\ofxLatk\libs\ofxLatk\src;..\..\..\addons\ofxLatk\src;..\..\..\addons\ofxLatk\libs\zip;..\..\..\addons\ofxLatk\libs\zip\include;..\..\..\addons\ofxLatk\libs\zip\src</AdditionalIncludeDirectories>
 			<CompileAs>CompileAsCpp</CompileAs>
 			<MultiProcessorCompilation>true</MultiProcessorCompilation>
 			<ObjectFileName>$(IntDir)</ObjectFileName>
-			<AdditionalOptions>-DPOCO_STATIC</AdditionalOptions>
 		</ClCompile>
 		<Link>
 			<GenerateDebugInformation>true</GenerateDebugInformation>
 			<SubSystem>Console</SubSystem>
 			<RandomizedBaseAddress>false</RandomizedBaseAddress>
-			<AdditionalDependencies>%(AdditionalDependencies);PocoCryptomdd.lib;PocoDatamdd.lib;PocoDataSQLitemdd.lib;PocoFoundationmdd.lib;PocoJSONmdd.lib;PocoNetmdd.lib;PocoNetSSLmdd.lib;PocoPDFmdd.lib;PocoUtilmdd.lib;PocoXMLmdd.lib;PocoZipmdd.lib;iphlpapi.lib</AdditionalDependencies>
-			<AdditionalLibraryDirectories>%(AdditionalLibraryDirectories);..\..\..\addons\ofxPoco\libs\poco\lib\vs\x64\Debug;..\..\..\addons\ofxPoco</AdditionalLibraryDirectories>
+			<AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+			<AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
 		</Link>
 		<PostBuildEvent />
 	</ItemDefinitionGroup>
@@ -142,11 +140,10 @@
 			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
 			<RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
 			<WarningLevel>Level3</WarningLevel>
-			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\addons\ofxLatk\libs;..\..\..\addons\ofxLatk\libs\jsoncpp;..\..\..\addons\ofxLatk\libs\jsoncpp\include;..\..\..\addons\ofxLatk\libs\jsoncpp\include\json;..\..\..\addons\ofxLatk\libs\jsoncpp\src;..\..\..\addons\ofxLatk\libs\ofxLatk;..\..\..\addons\ofxLatk\libs\ofxLatk\include;..\..\..\addons\ofxLatk\libs\ofxLatk\include\ofxLatk;..\..\..\addons\ofxLatk\libs\ofxLatk\src;..\..\..\addons\ofxLatk\src;..\..\..\addons\ofxPoco\libs\poco\include;..\..\..\addons\ofxPoco\src</AdditionalIncludeDirectories>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\addons\ofxLatk\libs;..\..\..\addons\ofxLatk\libs\jsoncpp;..\..\..\addons\ofxLatk\libs\jsoncpp\include;..\..\..\addons\ofxLatk\libs\jsoncpp\include\json;..\..\..\addons\ofxLatk\libs\jsoncpp\src;..\..\..\addons\ofxLatk\libs\ofxLatk;..\..\..\addons\ofxLatk\libs\ofxLatk\include;..\..\..\addons\ofxLatk\libs\ofxLatk\include\ofxLatk;..\..\..\addons\ofxLatk\libs\ofxLatk\src;..\..\..\addons\ofxLatk\src;..\..\..\addons\ofxLatk\libs\zip;..\..\..\addons\ofxLatk\libs\zip\include;..\..\..\addons\ofxLatk\libs\zip\src</AdditionalIncludeDirectories>
 			<CompileAs>CompileAsCpp</CompileAs>
 			<MultiProcessorCompilation>true</MultiProcessorCompilation>
 			<ObjectFileName>$(IntDir)</ObjectFileName>
-			<AdditionalOptions>-DPOCO_STATIC</AdditionalOptions>
 		</ClCompile>
 		<Link>
 			<IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
@@ -155,8 +152,8 @@
 			<OptimizeReferences>true</OptimizeReferences>
 			<EnableCOMDATFolding>true</EnableCOMDATFolding>
 			<RandomizedBaseAddress>false</RandomizedBaseAddress>
-			<AdditionalDependencies>%(AdditionalDependencies);PocoCryptomd.lib;PocoDatamd.lib;PocoDataSQLitemd.lib;PocoFoundationmd.lib;PocoJSONmd.lib;PocoNetmd.lib;PocoNetSSLmd.lib;PocoPDFmd.lib;PocoUtilmd.lib;PocoXMLmd.lib;PocoZipmd.lib;iphlpapi.lib</AdditionalDependencies>
-			<AdditionalLibraryDirectories>%(AdditionalLibraryDirectories);..\..\..\addons\ofxPoco\libs\poco\lib\vs\Win32\Release;..\..\..\addons\ofxPoco</AdditionalLibraryDirectories>
+			<AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+			<AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
 		</Link>
 		<PostBuildEvent />
 	</ItemDefinitionGroup>
@@ -166,10 +163,9 @@
 			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
 			<RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
 			<WarningLevel>Level3</WarningLevel>
-			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\addons\ofxLatk\libs;..\..\..\addons\ofxLatk\libs\jsoncpp;..\..\..\addons\ofxLatk\libs\jsoncpp\include;..\..\..\addons\ofxLatk\libs\jsoncpp\include\json;..\..\..\addons\ofxLatk\libs\jsoncpp\src;..\..\..\addons\ofxLatk\libs\ofxLatk;..\..\..\addons\ofxLatk\libs\ofxLatk\include;..\..\..\addons\ofxLatk\libs\ofxLatk\include\ofxLatk;..\..\..\addons\ofxLatk\libs\ofxLatk\src;..\..\..\addons\ofxLatk\src;..\..\..\addons\ofxPoco\libs\poco\include;..\..\..\addons\ofxPoco\src</AdditionalIncludeDirectories>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\addons\ofxLatk\libs;..\..\..\addons\ofxLatk\libs\jsoncpp;..\..\..\addons\ofxLatk\libs\jsoncpp\include;..\..\..\addons\ofxLatk\libs\jsoncpp\include\json;..\..\..\addons\ofxLatk\libs\jsoncpp\src;..\..\..\addons\ofxLatk\libs\ofxLatk;..\..\..\addons\ofxLatk\libs\ofxLatk\include;..\..\..\addons\ofxLatk\libs\ofxLatk\include\ofxLatk;..\..\..\addons\ofxLatk\libs\ofxLatk\src;..\..\..\addons\ofxLatk\src;..\..\..\addons\ofxLatk\libs\zip;..\..\..\addons\ofxLatk\libs\zip\include;..\..\..\addons\ofxLatk\libs\zip\src</AdditionalIncludeDirectories>
 			<CompileAs>CompileAsCpp</CompileAs>
 			<ObjectFileName>$(IntDir)</ObjectFileName>
-			<AdditionalOptions>-DPOCO_STATIC</AdditionalOptions>
 		</ClCompile>
 		<Link>
 			<IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
@@ -178,8 +174,8 @@
 			<OptimizeReferences>true</OptimizeReferences>
 			<EnableCOMDATFolding>true</EnableCOMDATFolding>
 			<RandomizedBaseAddress>false</RandomizedBaseAddress>
-			<AdditionalDependencies>%(AdditionalDependencies);PocoCryptomd.lib;PocoDatamd.lib;PocoDataSQLitemd.lib;PocoFoundationmd.lib;PocoJSONmd.lib;PocoNetmd.lib;PocoNetSSLmd.lib;PocoPDFmd.lib;PocoUtilmd.lib;PocoXMLmd.lib;PocoZipmd.lib;iphlpapi.lib</AdditionalDependencies>
-			<AdditionalLibraryDirectories>%(AdditionalLibraryDirectories);..\..\..\addons\ofxPoco\libs\poco\lib\vs\x64\Release;..\..\..\addons\ofxPoco</AdditionalLibraryDirectories>
+			<AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+			<AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
 		</Link>
 		<PostBuildEvent />
 	</ItemDefinitionGroup>
@@ -193,7 +189,7 @@
 		<ClCompile Include="..\..\..\addons\ofxLatk\libs\ofxLatk\src\LatkLayer.cpp" />
 		<ClCompile Include="..\..\..\addons\ofxLatk\libs\ofxLatk\src\LatkStroke.cpp" />
 		<ClCompile Include="..\..\..\addons\ofxLatk\libs\ofxLatk\src\LatkZip.cpp" />
-		<ClCompile Include="..\..\..\addons\ofxPoco\src\ofxXmlPoco.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxLatk\libs\zip\src\zip.c" />
 	</ItemGroup>
 	<ItemGroup>
 		<ClInclude Include="src\ofApp.h" />
@@ -206,7 +202,8 @@
 		<ClInclude Include="..\..\..\addons\ofxLatk\libs\ofxLatk\include\ofxLatk\LatkLayer.h" />
 		<ClInclude Include="..\..\..\addons\ofxLatk\libs\ofxLatk\include\ofxLatk\LatkStroke.h" />
 		<ClInclude Include="..\..\..\addons\ofxLatk\libs\ofxLatk\include\ofxLatk\LatkZip.h" />
-		<ClInclude Include="..\..\..\addons\ofxPoco\src\ofxXmlPoco.h" />
+		<ClInclude Include="..\..\..\addons\ofxLatk\libs\zip\include\zip.h" />
+		<ClInclude Include="..\..\..\addons\ofxLatk\libs\zip\src\miniz.h" />
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="$(OF_ROOT)\libs\openFrameworksCompiled\project\vs\openframeworksLib.vcxproj">

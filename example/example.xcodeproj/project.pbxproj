@@ -57,6 +57,16 @@
 			"path": "ofxLatk",
 			"sourceTree": "<group>"
 		},
+		"21CAB403-916C-4050-B7F8-207B97FF4328": {
+			"children": [
+				"6AD8C994-2C3F-4894-9BD3-E6A07C4BFD99",
+				"F5AC58D0-5CB6-40C1-AD15-847F4457093B"
+			],
+			"isa": "PBXGroup",
+			"name": "src",
+			"path": "src",
+			"sourceTree": "<group>"
+		},
 		"257F6699-D8DB-4FF3-822A-F2C914EF7052": {
 			"fileRef": "99CA9B9C-373D-4832-9424-DE732CFA1DD3",
 			"isa": "PBXBuildFile"
@@ -133,9 +143,23 @@
 			"name": "json-forwards.h",
 			"sourceTree": "<group>"
 		},
+		"6AD8C994-2C3F-4894-9BD3-E6A07C4BFD99": {
+			"fileEncoding": "4",
+			"isa": "PBXFileReference",
+			"lastKnownFileType": "sourcecode.c.h",
+			"name": "miniz.h",
+			"sourceTree": "<group>"
+		},
 		"73B6177F-D575-4D98-B31D-F9885700E133": {
 			"fileRef": "0A017247-9F6F-448D-8D17-DA7734083FF0",
 			"isa": "PBXBuildFile"
+		},
+		"84412FAD-FB66-47ED-8076-EAB92DA54127": {
+			"fileEncoding": "4",
+			"isa": "PBXFileReference",
+			"lastKnownFileType": "sourcecode.c.h",
+			"name": "zip.h",
+			"sourceTree": "<group>"
 		},
 		"861671A8-DFB7-4F14-B19A-B06A8EE53B0E": {
 			"fileEncoding": "4",
@@ -161,6 +185,15 @@
 		"903C6734-9051-46B5-8C1B-E24F7D895D69": {
 			"fileRef": "C39E3893-9790-4B08-8613-0426F2DF8305",
 			"isa": "PBXBuildFile"
+		},
+		"913BFC7D-D770-48E0-9ECF-C6D860FF4B89": {
+			"children": [
+				"84412FAD-FB66-47ED-8076-EAB92DA54127"
+			],
+			"isa": "PBXGroup",
+			"name": "include",
+			"path": "include",
+			"sourceTree": "<group>"
 		},
 		"99CA9B9C-373D-4832-9424-DE732CFA1DD3": {
 			"fileEncoding": "4",
@@ -247,6 +280,20 @@
 		},
 		"CA0E57C3-E12F-4FB8-B83D-6B9A0AE3C3FA": {
 			"fileRef": "9DBE5850-6499-4DFD-ADE9-9E12EA44D794",
+			"isa": "PBXBuildFile"
+		},
+		"CA358E29-7AA6-437C-8FEC-B940F5B5811F": {
+			"children": [
+				"913BFC7D-D770-48E0-9ECF-C6D860FF4B89",
+				"21CAB403-916C-4050-B7F8-207B97FF4328"
+			],
+			"isa": "PBXGroup",
+			"name": "zip",
+			"path": "zip",
+			"sourceTree": "<group>"
+		},
+		"CC73095E-1698-482F-A999-1B7B8B43E868": {
+			"fileRef": "F5AC58D0-5CB6-40C1-AD15-847F4457093B",
 			"isa": "PBXBuildFile"
 		},
 		"D71EBA9C-77CA-41C3-843A-AA5C9FA198A5": {
@@ -373,7 +420,8 @@
 				"257F6699-D8DB-4FF3-822A-F2C914EF7052",
 				"2A1E7491-A1EC-4EE2-B1DA-BCF815755978",
 				"73B6177F-D575-4D98-B31D-F9885700E133",
-				"348689C8-B588-4422-A106-2752BF6A2E0A"
+				"348689C8-B588-4422-A106-2752BF6A2E0A",
+				"CC73095E-1698-482F-A999-1B7B8B43E868"
 			],
 			"isa": "PBXSourcesBuildPhase",
 			"runOnlyForDeploymentPostprocessing": "0"
@@ -433,14 +481,14 @@
 					"../libs/ofxLatk/include",
 					"../libs/ofxLatk/include/ofxLatk",
 					"../libs/jsoncpp/include",
-					"../libs/poco/include"
+					"../libs/zip/include",
+					"../libs/zip/src"
 				],
 				"LIBRARY_SEARCH_PATHS": "$(inherited)",
 				"OTHER_LDFLAGS": [
 					"$(OF_CORE_LIBS)",
 					"$(OF_CORE_FRAMEWORKS)",
-					"$(LIB_OF_DEBUG)",
-					"../libs/poco/lib/macos/poco.xcframework/macos-arm64_x86_64/poco.a"
+					"$(LIB_OF_DEBUG)"
 				]
 			},
 			"isa": "XCBuildConfiguration",
@@ -460,14 +508,14 @@
 					"../libs/ofxLatk/include",
 					"../libs/ofxLatk/include/ofxLatk",
 					"../libs/jsoncpp/include",
-					"../libs/poco/include"
+					"../libs/zip/include",
+					"../libs/zip/src"
 				],
 				"LIBRARY_SEARCH_PATHS": "$(inherited)",
 				"OTHER_LDFLAGS": [
 					"$(OF_CORE_LIBS)",
 					"$(OF_CORE_FRAMEWORKS)",
-					"$(LIB_OF_RELEASE)",
-					"../libs/poco/lib/macos/poco.xcframework/macos-arm64_x86_64/poco.a"
+					"$(LIB_OF_RELEASE)"
 				],
 				"baseConfigurationReference": "E4EB6923138AFD0F00A09F29"
 			},
@@ -550,11 +598,19 @@
 		"EEB4FAAC-1328-4330-9F0B-3208BC54074C": {
 			"children": [
 				"BEC0147A-1EE8-4785-923E-3F3E72AA5E23",
-				"19E6AD3B-E595-4FA1-AABC-DB205B604E31"
+				"19E6AD3B-E595-4FA1-AABC-DB205B604E31",
+				"CA358E29-7AA6-437C-8FEC-B940F5B5811F"
 			],
 			"isa": "PBXGroup",
 			"name": "libs",
 			"path": "libs",
+			"sourceTree": "<group>"
+		},
+		"F5AC58D0-5CB6-40C1-AD15-847F4457093B": {
+			"fileEncoding": "4",
+			"isa": "PBXFileReference",
+			"lastKnownFileType": "sourcecode.c.c",
+			"name": "zip.c",
 			"sourceTree": "<group>"
 		},
 		"F73890CF-F693-410B-B56F-6534B02CD53F": {
